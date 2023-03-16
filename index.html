@@ -4,19 +4,61 @@
 <head>
     <title>Interactive Time Table</title>
     <link rel="stylesheet" href="public/styles.css">
+    <script src="index.js"></script>
 </head>
 
 <body>
-    <h1>Interactive Time Table</h1>
-    <h2>Choose Department</h2>
-    <div class="dropdown">
-        <button class="dropbtn">Department</button>
-        <div class="dropdown-content">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
+    <form action="/" method="POST">
+        <h1>Interactive Time Table</h1>
+        <!-- <h2>Choose Department</h2>
+        <div class="dropdown" id="dropdown-department">
+            <button class="dropbtn">Department</button>
+            <div class="dropdown-content">
+                <a href="#" id="mca">MCA</a>
+                <a href="#">M.Tech.</a>
+                <a href="#">B.Tech.</a>
+                <a href="#">M.Sc.</a>
+            </div>
         </div>
-    </div>
+        <h2>Choose Semester</h2>
+        <div class="dropdown" id="dropdown-semester">
+            <button class="dropbtn">Semester</button>
+            <div class="dropdown-content">
+                <a href="#" id="sem1">Sem I</a>
+                <a href="#">Sem II</a>
+                <a href="#">Sem III</a>
+                <a href="#">Sem IV</a>
+                <a href="#">Sem V</a>
+                <a href="#">Sem VI</a>
+                <a href="#">Sem VII</a>
+                <a href="#">Sem VIII</a>
+            </div>
+        </div> -->
+        <form name="form-id">
+            <label name="dropdown-department">Choose Department</label>
+            <select name="department-select" onchange="depSel()">
+                <option>Select Department</option>
+                <option value="d1">MCA</option>
+                <option value="d2">M.Tech.</option>
+                <option value="d3">B.Tech.</option>
+                <option value="d4">M.Sc.</option>
+            </select>
+            <br>
+            <label name="dropdown-semester">Choose Semester</label>
+            <select name="semester-select">
+                <option>Select Semester</option>
+                <option value="d1">Sem I</option>
+                <option value="d2">Sem II</option>
+                <option value="d3">Sem III</option>
+                <option value="d4">Sem IV</option>
+                <option value="d4">Sem V</option>
+                <option value="d4">Sem VI</option>
+                <option value="d4">Sem VII</option>
+                <option value="d4">Sem VIII</option>
+            </select>
+        </form>
+        <label id="result"></label>
+    </form>
 </body>
 
 </html>
