@@ -19,6 +19,11 @@ app.get('/', (req, res) => {
     res.end(data.toString())
 })
 
+app.post('/', (req, res) => {
+    const selectedOption = req.body.selectedOption
+    res.render('index', { selectedOption })
+})
+
 app.listen(port, () => {
     console.log('Listening on port ' + port)
 })

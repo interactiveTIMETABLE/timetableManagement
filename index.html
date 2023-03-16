@@ -8,9 +8,9 @@
 </head>
 
 <body>
-    <form action="/" method="POST">
-        <h1>Interactive Time Table</h1>
-        <!-- <h2>Choose Department</h2>
+
+    <h1>Interactive Time Table</h1>
+    <!-- <h2>Choose Department</h2>
         <div class="dropdown" id="dropdown-department">
             <button class="dropbtn">Department</button>
             <div class="dropdown-content">
@@ -34,9 +34,10 @@
                 <a href="#">Sem VIII</a>
             </div>
         </div> -->
-        <form name="form-id">
-            <label name="dropdown-department">Choose Department</label>
-            <select name="department-select" onchange="depSel()">
+    <form name="form-id">
+        <label name="dropdown_department">Choose Department</label>
+        <form action="/" method="POST">
+            <select name="department_select" onchange="this.form.submit()">
                 <option>Select Department</option>
                 <option value="d1">MCA</option>
                 <option value="d2">M.Tech.</option>
@@ -44,21 +45,24 @@
                 <option value="d4">M.Sc.</option>
             </select>
             <br>
-            <label name="dropdown-semester">Choose Semester</label>
-            <select name="semester-select">
+            <label name="dropdown_semester">Choose Semester</label>
+            <select name="semester_select">
                 <option>Select Semester</option>
-                <option value="d1">Sem I</option>
-                <option value="d2">Sem II</option>
-                <option value="d3">Sem III</option>
-                <option value="d4">Sem IV</option>
-                <option value="d4">Sem V</option>
-                <option value="d4">Sem VI</option>
-                <option value="d4">Sem VII</option>
-                <option value="d4">Sem VIII</option>
+                <option value="s1">Sem I</option>
+                <option value="s2">Sem II</option>
+                <option value="s3">Sem III</option>
+                <option value="s4">Sem IV</option>
+                <option value="s5">Sem V</option>
+                <option value="s6">Sem VI</option>
+                <option value="s7">Sem VII</option>
+                <option value="s8">Sem VIII</option>
             </select>
+            <input type="hidden" name="selectedOption" value="">
+            <input type="submit" value="Submit">
         </form>
-        <label id="result"></label>
     </form>
+    <label id="result"></label>
+    <h2 id="selectedOption"></h2>
 </body>
 
 </html>
