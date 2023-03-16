@@ -1,0 +1,41 @@
+h1 {
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+    background-color: greenyellow;
+}
+
+.dropdown {
+    display: inline-block;
+    position: relative;
+}
+
+.dropdown-item {
+    display: block;
+    padding: 20px 25px;
+    text-align: center;
+    font-size: large;
+    text-decoration: none;
+    color: #313131;
+    font-weight: bold;
+}
+
+.dropdown-menu a {
+    display: block;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    z-index: 999;
+}
+
+.dropdown-menu a:hover {
+    background-color: #ec6666;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
