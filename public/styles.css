@@ -11,3 +11,13 @@ label {
     margin-top: 150px;
     margin-left: 100px;
 }
+
+option {
+    text-align: center;
+    font-size: large;
+}
+
+select {
+    font-size: larger;
+    width: 300px;
+}
