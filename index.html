@@ -4,57 +4,28 @@
 <head>
     <title>Interactive Time Table</title>
     <link rel="stylesheet" href="public/styles.css">
-    <script src="index.js"></script>
+    <script src="public/index.js"></script>
 </head>
-
-<body>
-
-    <h1>Interactive Time Table</h1>
-    <div class="container">
-        <label name="dropdown_department">Choose Department</label>
-        <select name="department_select" id="department_select" onchange="populate(this.id, 'semester_select')">
-            <option>Select Department</option>
-            <option value="d1">MCA</option>
-            <option value="d2">M.Tech.</option>
-            <option value="d3">B.Tech.</option>
-            <option value="d4">M.Sc.</option>
-        </select>
-        <br>
-        <br>
-        <label name="dropdown_semester">Choose Semester</label>
-        <select name="semester_select" id="semester_select">
-            <option>Select Semester</option>
-        </select>
-    </div>
-    <!-- note for shubham -->
-    <!-- try to use the script coded inside index.js and delete this <script> tag -->
-    <!-- as for now it's not working if i delete the <script> tag and it's not using the index.js code -->
-    <script>
-        function populate(department_select, semester_select) {
-            var dSel = document.getElementById(department_select)
-            var sSel = document.getElementById(semester_select)
-            sSel.innerHTML = ""
-            if (dSel.value == "d1") {
-                var optionArray = ['sem1|Sem 1', 'sem2|Sem 2', 'sem3|Sem 3', 'sem4|Sem 4', 'sem5|Sem 5', 'sem6|Sem 6']
-            } else if (dSel.value == "d2") {
-                var optionArray = ['sem1|Sem 1', 'sem2|Sem 2', 'sem3|Sem 3', 'sem4|Sem 4']
-            } else if (dSel.value == "d3") {
-                var optionArray = ['sem1|Sem 1', 'sem2|Sem 2', 'sem3|Sem 3', 'sem4|Sem 4', 'sem5|Sem 5', 'sem6|Sem 6', 'sem7|Sem 7', 'sem8|Sem 8']
-            } else if (dSel.value == "d4") {
-                var optionArray = ['sem1|Sem 1', 'sem2|Sem 2', 'sem3|Sem 3', 'sem4|Sem 4']
-            } else {
-                var optionArray = ['select_semester|Select Semester']
-            }
-            for (var option in optionArray) {
-                var pair = optionArray[option].split("|")
-                var newOption = document.createElement("option")
-                newOption.value = pair[0]
-                newOption.innerHTML = pair[1]
-                sSel.options.add(newOption)
-            }
-        }
-    </script>
-    <label id="result"></label>
+<h1>Interactive Time Table</h1>
+<div class="container">
+    <label name="dropdown_department">Choose Department</label>
+    <select name="department_select" id="department_select" onchange="populate(this.id, 'semester_select')">
+        <option>Select Department</option>
+        <option value="mca">MCA</option>
+        <option value="mTech">M.Tech.</option>
+        <option value="bTech">B.Tech.</option>
+        <option value="mSc">M.Sc.</option>
+    </select>
+    <br>
+    <br>
+    <label name="dropdown_semester">Choose Semester</label>
+    <select name="semester_select" id="semester_select" onchange="displayRes(this.id, department_select)">
+        <option>Select Semester</option>
+    </select>
+    <br>
+    <br>
+    <div id="result"></div>
+</div>
 </body>
 
 </html>
