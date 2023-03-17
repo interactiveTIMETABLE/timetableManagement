@@ -28,4 +28,9 @@ function displayRes(semester_select, department_select) {
     var sSel = document.getElementById("semester_select")
     var resultDiv = document.getElementById("result")
     resultDiv.innerHTML = "You have selected " + dSel.value + " department " + sSel.value
+    /*
+    if (dSel.value == "mca" && sSel.value == "sem1") {
+        diplay the timetable of department mca sem 1
+    }
+    */
 }
