@@ -3,6 +3,7 @@ const port = process.env.PORT || 3000
 const express = require('express')
 const app = express()
 const fs = require('fs')
+const connectDB = require('./connection')
 
 app.use('/public', express.static('public'))
 
@@ -17,6 +18,8 @@ app.get('/', (req, res) => {
     const data = fs.readFileSync('index.html', 'utf8')
     res.end(data.toString())
 })
+
+connectDB()
 
 app.listen(port, () => {
     console.log('Listening on port ' + port)
