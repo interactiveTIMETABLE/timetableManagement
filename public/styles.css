@@ -37,9 +37,23 @@ td {
 th {
     border: 1px solid;
     height: 50px;
+    background-color: #a6f1cc;
 }
 
 .days {
     width: 200px;
     text-align: center;
+    background-color: #a6f1cc;
+}
+
+td:hover {
+    background-color: #E0E0E0;
+}
+
+th:hover {
+    background-color: #81eeb7;
+}
+
+.days:hover {
+    background-color: #81eeb7;
 }
