@@ -6,102 +6,120 @@
     <link rel="stylesheet" href="public/styles.css">
     <script src="public/index.js"></script>
 </head>
-<h1>Interactive Time Table</h1>
-<div class="container">
-    <label name="dropdown_department">Choose Department</label>
-    <select name="department_select" id="department_select" onchange="populate(this.id, 'semester_select')">
-        <option>Select Department</option>
-        <option value="mca">MCA</option>
-        <option value="mTech">M.Tech.</option>
-        <option value="bTech">B.Tech.</option>
-        <option value="mSc">M.Sc.</option>
-    </select>
-    <br>
-    <br>
-    <label name="dropdown_semester">Choose Semester</label>
-    <select name="semester_select" id="semester_select" onchange="displayRes(this.id, department_select)">
-        <option>Select Semester</option>
-    </select>
-    <br>
-    <br>
-    <div id="result"></div>
-    <form action="/" method="POST">
-        <table class="table">
-            <thead class="time_slots">
+
+<body>
+    <h1>Interactive Time Table</h1>
+    <div class="container">
+        <label name="dropdown_department">Choose Department</label>
+        <select name="department_select" id="department_select" onchange="populate(this.id, 'semester_select')">
+            <option>Select Department</option>
+            <option value="mca">MCA</option>
+            <option value="mTech">M.Tech.</option>
+            <option value="bTech">B.Tech.</option>
+            <option value="mSc">M.Sc.</option>
+        </select>
+        <br>
+        <br>
+        <label name="dropdown_semester">Choose Semester</label>
+        <select name="semester_select" id="semester_select" onchange="displayRes(this.id, department_select)">
+            <option>Select Semester</option>
+        </select>
+        <br>
+        <br>
+        <div id="result"></div>
+        <form action="/" method="POST">
+            <table class="table">
+                <thead class="time_slots">
+                    <tr>
+                        <th></th>
+                        <th>08:00 - 09:00</th>
+                        <th>09:00 - 10:00</th>
+                        <th>10:00 - 11:00</th>
+                        <th>12:00 - 01:00</th>
+                        <th>01:00 - 02:00</th>
+                        <th>02:00 - 03:00</th>
+                        <th>03:00 - 04:00</th>
+                        <th>04:00 - 05:00</th>
+                        <th>05:00 - 06:00</th>
+                    </tr>
+                </thead>
                 <tr>
-                    <th></th>
-                    <th>08:00 - 09:00</th>
-                    <th>09:00 - 10:00</th>
-                    <th>10:00 - 11:00</th>
-                    <th>12:00 - 01:00</th>
-                    <th>01:00 - 02:00</th>
-                    <th>02:00 - 03:00</th>
-                    <th>03:00 - 04:00</th>
-                    <th>04:00 - 05:00</th>
-                    <th>05:00 - 06:00</th>
+                    <td class="days">Monday</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td rowspan="5" align="center">
+                        <h2>L<br><br>U<br><br>N<br><br>C<br><br>H</h2>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
-            </thead>
-            <tr>
-                <td class="days">Monday</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td rowspan="5" align="center">
-                    <h2>L<br><br>U<br><br>N<br><br>C<br><br>H</h2>
-                </td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td class="days">Tuesday</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td class="days">Wednesday</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td class="days">Thursday</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td class="days">Friday</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        </table>
-    </form>
-</div>
+                <tr>
+                    <td class="days">Tuesday</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="days">Wednesday</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="days">Thursday</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="days">Friday</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </form>
+        <br>
+        <br>
+        <label name="dropdown_department">Choose Department</label>
+        <select name="test_dropdown" id="test_dropdown">
+            <option>Select Department</option>
+            <option value="d1">Department 1</option>
+            <option value="d2">Department 2</option>
+            <option value="d3">Department 3</option>
+            <option value="d4">Department 4</option>
+        </select>
+        <br>
+        <br>
+        <label>Display Teacher's Name From MongoDB</label>
+        <br>
+        <br>
+        <label name="test_result" id="test_result"></label>
+    </div>
 </body>
 
 </html>

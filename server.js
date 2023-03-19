@@ -1,8 +1,6 @@
-const http = require('http')
 const port = process.env.PORT || 3000
 const express = require('express')
 const app = express()
-const fs = require('fs')
 const connectDB = require('./connection')
 
 app.use('/public', express.static('public'))
@@ -13,11 +11,7 @@ app.use(express.urlencoded({
     extended: true
 }))
 
-app.get('/', (req, res) => {
-    res.statuscode = 200
-    const data = fs.readFileSync('index.html', 'utf8')
-    res.end(data.toString())
-})
+app.use('/', require('./router'))
 
 connectDB()
 
