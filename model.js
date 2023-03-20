@@ -9,6 +9,10 @@ var schema = new mongoose.Schema({
     course_name: {
         type: 'string',
         required: true
+    },
+    t_name: {
+        type: 'string',
+        required: true
     }
 })
 

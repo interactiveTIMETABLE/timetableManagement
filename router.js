@@ -11,4 +11,6 @@ route.get('/', (req, res) => {
 
 route.post('/api/dept_db', controller.create)
 
+route.get('/api/dept_db', controller.find)
+
 module.exports = route
