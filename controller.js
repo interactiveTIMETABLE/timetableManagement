@@ -20,13 +20,34 @@ exports.create = (req, res) => {
             res.send(data)
         })
         .catch(err => {
-            res.status(500)({
-                message: err.message || 'Something went wrong while saving data'
-            })
+            res.status(500)({ message: err.message || 'Something went wrong while saving data' })
         })
 }
 
 // retrive user(s)
 exports.find = (req, res) => {
+    // if id is provided then return a single user else return multiple users
+    if (req.query.id) {
+        const id = req.query.id
+        userDb.findById(id)
+            .then(data => {
+                if (!data) {
+                    res.status(404).send({ message: "Not found user with id " + id })
+                } else {
+                    res.send(data)
+                }
+            })
+            .catch(err => {
+                res.status(500).send({ message: "Error retrieving user with id " + id })
+            })
 
+    } else {
+        userDb.find()
+            .then(user => {
+                res.send(user)
+            })
+            .catch(err => {
+                res.status(500)({ message: err.message || 'Something went wrong while retrieving data' })
+            })
+    }
 }
