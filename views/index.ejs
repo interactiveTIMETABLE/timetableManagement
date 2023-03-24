@@ -60,14 +60,6 @@
                 <label name="input_teacher_name">Teacher Name</label>
                 <input type="text" name="teacher_name" class="form-control" id="teacher_name">
             </div>
-            <!-- <label name="dropdown_department">Choose Department</label>
-        <select name="test_dropdown" id="test_dropdown">
-            <option>Select Department</option>
-            <option value="d1">Department 1</option>
-            <option value="d2">Department 2</option>
-            <option value="d3">Department 3</option>
-            <option value="d4">Department 4</option>
-        </select> -->
             <div class="col-md-6">
                 <label name="dropdown_course">Course</label>
                 <select name="test_dropdown" class="form-control" id="test_dropdown">
@@ -83,9 +75,11 @@
             </div>
             <br>
             <br>
-            <div>department :</div>
-            <div>course :</div>
-            <div>Teacher name :</div>
+            <% for(var i = 0; i < users.length; i++) { %>
+            <label>Department name: <%= users[i].dept_name %></label>
+            <label>Course name: <%= users[i].course_name %></label>
+            <label>Teacher's name: <%= users[i].t_name %></label>
+            <% } %>
             <br>
             <br>
             <label name="test_result" id="test_result"></label>
